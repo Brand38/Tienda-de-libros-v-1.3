@@ -1,0 +1,1028 @@
+@font-face {
+    font-family: neew;
+    src: url(/tipografias/Kanit-Regular.ttf);
+}
+
+* {
+    font-family: neew;
+    user-select: none;
+} 
+
+:root {
+    --bg-color: #222;
+    --text-color: #fff;
+    --seg-color-principal: #008a9c;
+}
+
+div, body, ul, li, a, p, h1, h2, span, header, main, aside, img, nav, label {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ancho_pag {
+    max-width: 1000px;
+    margin: auto;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.parche_backround_image {
+    background: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--bg-color) 70%), 
+        url('/imagenes/fondo_bibloteca.png') no-repeat right/cover;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    color: var(--text-color);
+    padding: 0 20px 0 10px ;
+    container-name: icons;
+    container-type: inline-size;
+    background-color: var(--bg-color);
+    position: fixed;
+    top: 0;
+    left: 50% calc(-50%);
+    width: 100vw;
+    max-width: 1000px;
+    z-index: 200;
+}
+
+
+.header_page {
+    display: flex;
+    align-items: center;
+}
+
+.header_page img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+i {
+    color: var(--text-color);
+    background-color: var(--seg-color-principal);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.header_nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header_nav ul li {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header_text {
+    display: none;
+}
+
+/* Menu lateral desplegable */
+
+.menu_lateral-container {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 300;
+    position: fixed;
+    display: none;
+}
+
+.menu {
+    height: 100vh;
+    background-color: var(--bg-color);
+    width: 80vw;
+    max-width: 350px;
+    position: relative;
+    animation: desplegar_menu .8s;
+}
+
+@keyframes desplegar_menu {
+       0% {
+        transform: translateX(-100%);
+       }
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 35px 5px 5px 10px;
+}
+
+.logo span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--text-color);
+}
+
+.logo span div {
+    background-color: var(--seg-color-principal);
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-weight: 100;
+}
+
+.cerrar_menu {
+    color: var(--seg-color-principal);
+    text-decoration: none;
+    padding: 5px;
+}
+
+.menu_container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(13, 50px);
+    padding: 10px;
+    gap: 10px;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 400px;
+    scrollbar-width: none;
+}
+
+.menu_container-item:last-child {
+    height: 50px;
+}
+  
+
+.menu_container-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    color: var(--text-color);
+    background-color: #111;
+}
+
+.categorias_select:hover .agg_content {
+    animation: rotar-content .4s forwards;
+}
+
+@keyframes rotar-content {
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+.negocios_select,
+.categorias_select {
+    justify-content: space-between;
+}
+
+.negocios_info,
+.categorias_content {
+    display: flex;
+    gap: 10px;
+}
+
+.negocios_select img {
+    width: 25%;
+}
+
+.menu_container-item:hover {
+    background-color: var(--seg-color-principal);
+}
+
+.contend_add_menu {
+    height: 60vh;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "Desarrolladores" "Blog"
+    "Compras" "Mas vendidos"
+    "Reembolso" "Solo rentar"
+    ;
+    gap: 10px;
+}
+
+.contend_add_menu-item {
+    background-color: #111;
+    border-radius: 10px;
+    color: var(--text-color);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+#desplegar {
+    display: none;
+}
+
+#desplegar:checked ~ .menu_lateral-container {
+    display: flex;
+}
+
+/* Buscar */
+
+#abrir_cerrar_buscador_1:checked  ~ .tittle_logo {
+    display: none;
+}
+
+#abrir_cerrar_buscador_1,
+#abrir_cerrar_buscador_2 {
+    display: none;
+}
+
+#abrir_cerrar_buscador_2:checked ~ #multiToggle,
+#abrir_cerrar_buscador_2:checked ~ .header_text {
+    display: none;
+}
+
+#abrir_cerrar_buscador_2:checked ~ .buscador_container {
+    display: flex;
+}
+
+.buscador_container {
+    border: 1px solid var(--text-color);
+    display: none;
+    align-items: center;
+    /* tenia un display flex */
+    padding: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: buscador .6s;
+    margin-left: 20px;
+}
+
+@keyframes buscador {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.buscador_container input {
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    border: none;
+    width: 100%;
+}
+
+.buscador_container input:focus {
+    outline: none;
+}
+
+.buscador_container input::placeholder {
+    color: var(--text-color);
+}
+
+.buscador_container a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Norificaciones */
+
+.header_nav ul li:nth-child(2) {
+    position: relative;
+}
+
+.notificaciones {
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    border-radius: 10px;
+    display: none;
+    border: 1px solid #888;
+    box-shadow: 11px 9px 55px 0px rgba(0,0,0,0.75);
+}
+
+#notificacions_ventana {
+    display: none;
+}
+
+#notificacions_ventana:checked ~ .notificaciones {
+    display: flex;
+}
+
+.notificaciones_container {
+    height: 100%;
+    position: relative;
+}
+
+.cerrar_ventana-notificaciones {
+    color: var(--text-color);
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    padding: 5px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: grid;
+    place-content: center;
+    font-weight: 900;
+}
+
+.notificaciones_tittle-container {
+    padding: 10px 120px 10px 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 11px;
+    align-items: center;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.notificaciones_tittle-container h2 {
+    display: flex;
+    font-weight: 300;
+}
+
+.notificaciones_data-container {
+    min-height: 200px;
+    max-height: 250px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+}
+
+.notificacion_info {
+    border-bottom: 1px solid #888;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    font-size: .8rem;
+    padding: 20px;
+    gap: 10px;
+}
+
+/* ventana emergente de "registrate" */
+
+#ventana {
+    display: none;
+}
+
+.ventana-registro {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 8%;
+    bottom: -150%;
+    background-color: var(--bg-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#ventana:checked ~ .ventana-registro {
+    display: flex;
+}
+
+.registro_link {
+    padding: 10px;
+}
+
+.ventana-registro label {
+    color: var(--text-color);
+}
+
+#Iniciar_secion {
+    display: none;
+}
+
+#Iniciar_secion:checked ~ .inicio_secion {
+    display: flex;
+}
+
+@container icons (min-width: 590px) {
+
+    .header {
+        background-color: red;
+    }
+
+    .header_nav ul li label {
+        display: flex;
+        cursor: pointer;
+    }
+
+    #abrir_cerrar_buscador_1:checked  ~ .tittle_logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+/* -------- registro */
+
+.inicio_secion, 
+.crear_cuenta {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container-pc {
+    width: 85%;
+    height: 75%;
+    display: flex;
+    container-name: imgpc;
+    container-type: inline-size;
+    box-shadow: 8px 7px 129px 0px rgba(0,0,0,0.75);
+}
+
+.img-container-img {
+    background-image: url(https://www.sprintcopy.com/wp-content/uploads/2023/09/Imprenta-de-libros-scaled.jpg);
+    min-width: 50%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 0 0 15px;
+    display: none;
+}
+
+@container imgpc (min-width: 700px) {
+    .img-container-img {
+        display: flex;
+    }
+}
+
+
+.inicio_secion-container {
+    background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 10%, var(--bg-color) 60%), 
+    url(/imagenes/fondo-libros-registro.png) no-repeat right/cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 15px 15px 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#cerrar_ventana,
+#registrarse {
+    display: none;
+}
+
+.salir {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    margin: 5px;
+    color: #fff;
+    border-radius: 50%;
+    height: 30px;
+    font-size: 1.3rem;
+    width: 30px;
+    font-weight: 900;
+    display: grid;
+    place-content: center;
+}
+
+#cerrar_ventana:checked ~ .inicio_secion {
+    display: none;
+}
+
+.registro_inio-secion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.registro_inio-secion img {
+    border: 2px solid var(--seg-color-principal);
+    border-radius: 50%;
+    height: 90px;
+    padding: 5px;
+}
+
+.Nombre_usario,
+.contraseña_usario,
+.crear-nombre {
+    display: flex;
+    border-radius: 8px 10px 10px 8px;
+    border: 1px solid var(--text-color);
+    max-width: 400px;
+    margin-top: 40px;
+}
+
+.Nombre_usario span,
+.contraseña_usario span,
+.crear-nombre span {
+    color: #fff;
+    font-weight: 100;
+    padding: 10px;
+}
+
+.Nombre_usario input,
+.contraseña_usario input,
+.crear-nombre input {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%;
+    border-radius: 0 8px 8px 0;
+    background-color: #fff;
+    border: none;
+}
+
+.registro_inio-secion a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--seg-color-principal);
+    width: 50%;
+    max-width: 350px;
+    padding: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.Nombre_usario input:focus,
+.contraseña_usario input:focus,
+.crear-nombre input:focus {
+    outline: none;
+}
+
+/* -------- Crear cuenta  */
+
+
+#registrarse:checked ~ .crear_cuenta {
+    display: flex;
+}
+
+#cerrar_ventana_crear_cuenta {
+    display: none;
+}
+
+#cerrar_ventana_crear_cuenta:checked ~ .crear_cuenta {
+    display: none;
+}
+
+.crear_cuenta .img-container-img {
+    background-image: url(/imagenes/crear-cuenta-img.jpg);
+}
+
+
+/* ---------------------- */
+/* -------- Main section */
+/* ---------------------- */
+
+.content-space {
+    height: 150px;
+}
+
+.content {
+    height: 55vh;
+    display: grid;
+    align-items: center;
+    position: relative;
+    container-name: content;
+    container-type: inline-size;
+    z-index: 100;
+}
+
+.content h2 {
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 100;
+    font-size: 1.2rem;
+    position: absolute; 
+    right: 0;
+    left: 0;
+    top: -40px;
+}
+
+.content_box {
+    height: 85%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 0px 65px 0px 65px;
+    gap: 20px 40px;
+}
+
+.content_book {
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    box-shadow: 11px 9px 55px 0px rgba(0,0,0,0.75);
+}
+
+.content_book:nth-child(1) {
+    background-image: url(/imagenes/Libro-Las_48_leyes_del_poder.png);
+}
+.content_book:nth-child(2) {
+    background-image: url(/imagenes/618nVO9D2lL._SL1000_.jpg);
+}
+.content_book:nth-child(3) {
+    background-image: url(/imagenes/71mssSA7QgL._SL1200_.jpg);
+}
+.content_book:nth-child(4) {
+    background-image: url(/imagenes/Libro-Maestria.png);
+}
+
+@container content (min-width: 600px) {
+    .content_box {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        max-height: 600px;
+    }
+
+    .content_book {
+        background-size: cover;
+        min-width: 120px;
+        max-height: 80%;
+        cursor: pointer;
+    }
+}
+
+@container content (min-width: 900px) {
+
+    .content_box {
+        display: flex;
+        justify-content: center;
+        scrollbar-width: none;
+    }
+
+    .content_book {
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-width: 150px;
+        height: 80%;
+    }
+}
+
+
+/* ---------- Parte de los autores principales */
+
+
+
+.principales_autores {
+    height: 8vh;
+    color: var(--text-color);
+    display: flex;
+    align-items: end;
+}
+
+.principales_autores_img {
+    padding-bottom: 50px;
+}
+
+
+.principales_autores_img ul {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 5px;
+    gap: 25px 10px;
+    max-width: 360px;
+}
+
+.principales_autores_img li {
+    flex-grow: 1;
+    height: 19vh;
+    list-style: none;
+    text-align: center;
+    box-shadow: 11px 9px 55px 0px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+}
+
+.principales_autores_img li:last-child {
+    box-shadow: none;
+    border: 1px solid var(--seg-color-principal);
+}
+
+.principales_autores_img img {
+    border-radius: 5px;
+    height: 100%;
+}
+
+.nombre_autor {
+    color: var(--text-color);
+}
+
+
+
+/* --------------- Contenido Nuevo */
+
+.contenido_nuevo {
+    background-color: var(--seg-color-principal);
+    padding: 10px 10px 20px 10px;
+    container-name: modificador;
+    container-type: inline-size;
+}
+
+.contenido_nuevo img {
+    width: 25%;
+    padding: 0 0 10px 10px;
+}
+
+.contenido_nuevo h2,
+.contenido_nuevo p {
+    color: var(--text-color);
+    font-weight: 100;
+    padding: 0 10px;
+}
+
+.contenido_nuevo p {
+    padding-bottom: 20px;
+}
+
+.contenido_nuevo-libros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    max-width: 400px;
+    grid-template-rows: 1 30px;
+    grid-auto-flow: column;
+    gap: 10px;
+}
+
+.libros_nuevos {
+    background-size: cover;
+    background-position: center;
+    height: 25vh;
+    box-shadow: 11px 9px 55px 0px rgba(0,0,0,0.75);
+    border-radius: 4px;
+}
+
+.libros_nuevos:nth-child(1) {
+    background-image: url(/imagenes/libro_army.jpg);
+}
+.libros_nuevos:nth-child(2) {
+    background-image: url(/imagenes/libro_el_principe.jpg);
+}
+.libros_nuevos:nth-child(3) {
+    background-image: url(/imagenes/libro_bts_2.jpg);
+}
+
+@container modificador (min-width: 450px) {
+
+    .contenido_nuevo img {
+        width: 20vw;
+    }
+}
+
+@container modificador (min-width: 625px) {
+    .contenido_nuevo img {
+        width: 10vw;
+    }
+}
+
+
+/* ------------- contenido nuevo y mas populares */
+
+.contenido_books {
+    padding: 50px 10px 0 10px;
+    container-name: books;
+    container-type: inline-size;
+}
+
+.guia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 1rem;
+    padding-bottom: 20px;
+}
+
+.guia a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 100;
+}
+
+.contenido_books h2 {
+    color: var(--text-color);
+    font-weight: 100;
+}
+
+.contenido_books-libros,
+.contenido_books-negocios,
+.contenido_books-psicología,
+.contenido_books-productividad,
+.contenido_books-Relaciones,
+.contenido_books-Estrategia {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1;
+    gap: 20px;
+}
+
+.img-book,
+.img-book-populares,
+.img-book-Negocios,
+.img-book-psicología,
+.img-book-productividad,
+.img-book-Relaciones,
+.img-book-Estrategia {
+    border-radius: 4px;
+    height: 25vh;
+    box-shadow: 11px 9px 55px 0px rgba(0,0,0,0.75);
+    background-size: cover;
+    background-position: center;
+    max-width: 200px;
+}
+
+.img-book:nth-child(1) {
+    background-image: url(https://m.media-amazon.com/images/I/71sDnzrD1vL._SL1500_.jpg);
+}
+
+.img-book:nth-child(2) {
+    background-image: url(https://m.media-amazon.com/images/I/81kxQPpFUvL._SL1500_.jpg);
+}
+
+.img-book:nth-child(3) {
+    background-image: url(https://m.media-amazon.com/images/I/61ds2H2x37L._SL1491_.jpg);
+}
+
+/* ------------------ Libros mas populares */
+
+.img-book-populares:nth-child(1) {
+    background-image: url(https://m.media-amazon.com/images/I/71f2bQp+RKL._SL1500_.jpg);
+}
+
+.img-book-populares:nth-child(2) {
+    background-image: url(https://m.media-amazon.com/images/I/61HSZIxRXjL._SL1500_.jpg);
+}
+
+.img-book-populares:nth-child(3) {
+    background-image: url(https://m.media-amazon.com/images/I/71UwTaFLDiL._SL1000_.jpg);
+}
+
+/* --------------------- Libros categoria "Negocios" */
+
+.img-book-Negocios:nth-child(1) {
+    background-image: url(https://m.media-amazon.com/images/I/81OKqe9+BlL._SL1500_.jpg);
+}
+
+.img-book-Negocios:nth-child(2) {
+    background-image: url(https://m.media-amazon.com/images/I/71QX7F3QV2L._SL1500_.jpg);
+}
+
+.img-book-Negocios:nth-child(3) {
+    background-image: url(https://m.media-amazon.com/images/I/81C0cgFoUjL._SL1500_.jpg);
+}
+
+/* -----------------------Libros categoria "Psicologia" */
+
+.img-book-psicología:nth-child(1) {
+    background-image: url(https://m.media-amazon.com/images/I/61zmqOsgkqL.jpg);
+}
+
+.img-book-psicología:nth-child(2) {
+    background-image: url(https://m.media-amazon.com/images/I/61cJGTRvPbL._SL1360_.jpg);
+}
+
+.img-book-psicología:nth-child(3) {
+    background-image: url(https://m.media-amazon.com/images/I/71ah1Lx4rKL._SL1500_.jpg);
+}
+
+/* -----------------------Libros categoria "Productividad" */
+
+.img-book-productividad:nth-child(1) {
+    background-image: url(https://m.media-amazon.com/images/I/711w6ROGqbL._SL1500_.jpg);
+}
+
+.img-book-productividad:nth-child(2) {
+    background-image: url(https://m.media-amazon.com/images/I/71Zs+C17P9L._SL1500_.jpg);
+}
+
+.img-book-productividad:nth-child(3) {
+    background-image: url(https://m.media-amazon.com/images/I/71RsLjddikL._SL1500_.jpg);
+}
+
+
+/* -----------------------Libros categoria "Relaciones" */
+
+.img-book-Relaciones:nth-child(1) {
+    background-image: url(https://m.media-amazon.com/images/I/61Dujv+wGWL._SL1500_.jpg);
+}
+
+.img-book-Relaciones:nth-child(2) {
+    background-image: url(https://m.media-amazon.com/images/I/610qe8c0KmL._SL1200_.jpg);
+}
+
+.img-book-Relaciones:nth-child(3) {
+    background-image: url(https://m.media-amazon.com/images/I/61nb+HzHRcL._SL1360_.jpg);
+}
+
+/* -----------------------Libros categoria "Estrategia" */
+
+.img-book-Estrategia:nth-child(1) {
+    background-image: url(https://m.media-amazon.com/images/I/71KCo6iZuqL._SL1000_.jpg);
+}
+
+.img-book-Estrategia:nth-child(2) {
+    background-image: url(https://m.media-amazon.com/images/I/81e03glAywL._SL1500_.jpg);
+}
+
+.img-book-Estrategia:nth-child(3) {
+    background-image: url(https://m.media-amazon.com/images/I/71HBiiphoaL._SL1500_.jpg);
+}
+
+
+@container books (min-width: 410px) {
+
+    .contenido_books-libros,
+    .contenido_books-negocios,
+    .contenido_books-psicología,
+    .contenido_books-productividad,
+    .contenido_books-Relaciones,
+    .contenido_books-Estrategia {
+        height: 30vh;
+        justify-content: center;
+        align-items: center; 
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .img-book,
+    .img-book-populares,
+    .img-book-Negocios,
+    .img-book-psicología,
+    .img-book-productividad,
+    .img-book-Relaciones,
+    .img-book-Estrategia  { 
+        height: 100%;
+    }
+}
+
+@container books (min-width: 640px) {
+
+    .contenido_books-libros,
+    .contenido_books-negocios,
+    .contenido_books-psicología,
+    .contenido_books-productividad,
+    .contenido_books-Relaciones,
+    .contenido_books-Estrategia {
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(3, 200px);
+    }
+
+    .img-book,
+    .img-book-populares,
+    .img-book-Negocios,
+    .img-book-psicología,
+    .img-book-productividad,
+    .img-book-Relaciones,
+    .img-book-Estrategia {
+        height: 100%;
+    }
+}
+
+/* ----------------- Footer */
+
+footer {
+    padding-top: 100px;
+}
+
+.creador {
+    color: var(--bg-color);
+    text-align: center;
+    font-size: .8rem;
+    padding: 20px 40px;
+    background-color: var(--seg-color-principal);
+    font-weight: 200;
+}
+
+.creador span {
+    font-weight: 900;
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.aclaracion {
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: .7rem;
+}
