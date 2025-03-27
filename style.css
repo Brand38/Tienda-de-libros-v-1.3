@@ -1,6 +1,6 @@
 @font-face {
     font-family: neew;
-    src: url('/Tienda-de-libros-v-1.3/tipografias/Kanit-Regular.ttf') format('woff2');
+    src: url(Kanit-Regular.ttf);
 }
 
 * {
