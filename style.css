@@ -773,13 +773,13 @@ i {
 }
 
 .libros_nuevos:nth-child(1) {
-    background-image: url(/imagenes/libro_army.jpg);
+    background-image: url(imagenes/libro_army.jpg);
 }
 .libros_nuevos:nth-child(2) {
-    background-image: url(/imagenes/libro_el_principe.jpg);
+    background-image: url(imagenes/libro_el_principe.jpg);
 }
 .libros_nuevos:nth-child(3) {
-    background-image: url(/imagenes/libro_bts_2.jpg);
+    background-image: url(imagenes/libro_bts_2.jpg);
 }
 
 @container modificador (min-width: 450px) {
