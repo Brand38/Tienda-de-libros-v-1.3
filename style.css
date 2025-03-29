@@ -635,13 +635,13 @@ i {
     background-image: url(https://m.media-amazon.com/images/I/81XOArd2AxL._SL1500_.jpg);
 }
 .content_book:nth-child(2) {
-    background-image: url(/imagenes/618nVO9D2lL._SL1000_.jpg);
+    background-image: url(imagenes/618nVO9D2lL._SL1000_.jpg);
 }
 .content_book:nth-child(3) {
-    background-image: url(/imagenes/71mssSA7QgL._SL1200_.jpg);
+    background-image: url(https://m.media-amazon.com/images/I/71mssSA7QgL._SL1200_.jpg);
 }
 .content_book:nth-child(4) {
-    background-image: url(/imagenes/Libro-Maestria.png);
+    background-image: url(imagenes/Libro-Maestria.png);
 }
 
 @container content (min-width: 600px) {
