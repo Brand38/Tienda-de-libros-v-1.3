@@ -32,7 +32,7 @@ body {
 .parche_backround_image {
     background: 
         linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--bg-color) 70%), 
-        url('/imagenes/fondo_bibloteca.png') no-repeat right/cover;
+        url('imagenes/fondo_bibloteca.png') no-repeat right/cover;
 }
 
 .header {
